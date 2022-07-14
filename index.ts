@@ -28,9 +28,15 @@ const db = knex({
 
     console.log(r3);
 
-    const data = await db.table('tests')
-    .where('id', '>', 2);
+    try {
 
-    console.log(data);
+        const data = await db.table('tests')
+        .where('id', '>', 2);
+
+    }
+
+    catch(e) {
+        console.error(e);
+    }
 
 })();
